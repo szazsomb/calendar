@@ -1,10 +1,14 @@
+"use client";
+
 import { Calendar } from '@/components/calendar'
-import Image from 'next/image'
+import { useState } from 'react'
 
 export default function Home() {
+  const [topDate, setTopDate] = useState(new Date("2023-09-11"));
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Calendar/>
+    <main className=" p-12">
+      <Calendar date={topDate} setDate={setTopDate}/>
     </main>
   )
 }
